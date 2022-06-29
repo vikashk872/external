@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: external
-        image: beachcoder/external:4
+        image: vikashk872/external:1
         env:
           - name: SERVER
             value: 'http://internal-service:7777'
