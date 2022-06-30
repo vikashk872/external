@@ -2,7 +2,7 @@ pipeline {
     agent any 
     environment {
         registryCredential = 'dockerhub'
-        imageName = 'beachcoder/external'
+        imageName = 'vikashk872/external'
         dockerImage = ''
         }
     stages {
