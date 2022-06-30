@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: beachcoder/external
+    image: vikashk872/external
     ports:
       - "8080:8080"
     environment:
@@ -15,6 +15,6 @@ services:
     build:
       context: ../internal
       dockerfile: ../internal/Dockerfile
-    image: beachcoder/internal
+    image: vikashk872/internal
     ports:
       - "8082:8082"
