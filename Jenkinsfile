@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Retrieve source from github' 
                 git branch: 'master',
-                    url: 'https://github.com/beachedcoder/2022_6_27_devops_external.git'
+                    url: 'https://github.com/vikashk872/external.git'
 
                 echo 'showing files from repo?' 
                 sh 'ls -a'
