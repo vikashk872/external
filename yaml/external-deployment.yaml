@@ -5,16 +5,16 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: external
+      app: ui-svc
   replicas: 1
   template:
     metadata:
       labels:
-        app: external
+        app: ui-svc
     spec:
       containers:
-      - name: external
-        image: vikashk872/external:1
+      - name: external-container
+        image: beachcoder/external:4
         env:
           - name: SERVER
             value: 'http://internal-service:7777'
