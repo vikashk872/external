@@ -40,7 +40,7 @@ The internal and external both use the following npm packages:
    * nyc for code coverage reporting  
      *  https://www.npmjs.com/package/nyc  
      
-   The external service uses the following additional libraries:
+   The external service uses the following additional libraries:  
 
    * express-handlebars ( a templating library)  
      * https://github.com/ericf/express-handlebars  
