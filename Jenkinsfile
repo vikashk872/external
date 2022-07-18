@@ -35,11 +35,12 @@ pipeline {
                 script {
                     echo 'pushing the image to docker hub' 
       withDockerRegistry([ credentialsId: registryCredential , url: "" ]) {
-      // following commands will be executed within logged docker registry
-      sh 'docker push ${env.imageName}:${env.BUILD_ID}'
+      docker.withRegistry('',registryCredential){
+                        dockerImage.push("${env.BUILD_ID}")
    }
                 }
             }
+        }
         }     
          stage('deploy to k8s') {
              agent {
