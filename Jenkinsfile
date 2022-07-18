@@ -1,6 +1,7 @@
 pipeline {
     agent any 
     environment {
+        registry = "vikashk872/external"
         registryCredential = 'dockerhub'
         imageName = 'vikashk872/external'
         dockerImage = ''
