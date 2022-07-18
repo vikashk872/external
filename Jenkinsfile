@@ -6,14 +6,8 @@ pipeline {
         dockerImage = ''
         }
     stages {
-        stage('Run the tests') {
-             agent {
-                docker { 
-                    image 'node:18-alpine'
-                    args '-e HOME=/tmp -e NPM_CONFIG_PREFIX=/tmp/.npm'
-                    reuseNode true
-                }
-            }
+        stage('Cloning the External repo') {
+             
             steps {
                 echo 'Retrieve source from github' 
                 git branch: 'master',
