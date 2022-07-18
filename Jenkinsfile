@@ -9,9 +9,7 @@ pipeline {
         stage('Cloning the External repo') {
              
             steps {
-                echo 'Retrieve source from github' 
-                git branch: 'master',
-                    url: 'https://github.com/vikashk872/external.git'
+               checkout scm
 
                 echo 'showing files from repo?' 
                 sh 'ls -a'
