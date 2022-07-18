@@ -34,7 +34,7 @@ pipeline {
             steps{
                 script {
                     echo 'pushing the image to docker hub' 
-      withDockerRegistry([ credentialsId: registryCredential , url: "https://hub.docker.com/repository/docker/vikashk872/external" ]) {
+      withDockerRegistry([ credentialsId: registryCredential , url: "" ]) {
       // following commands will be executed within logged docker registry
       sh 'docker push ${env.imageName}:${env.BUILD_ID}'
    }
