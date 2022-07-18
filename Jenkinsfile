@@ -4,7 +4,7 @@ pipeline {
         registry = "vikashk872/external"
         registryCredential = 'dockerhub'
         imageName = 'vikashk872/external'
-        dockerImage = ''
+        dockerImage = 'vikashk872/external'
         }
     stages {
         stage('Cloning the External repo') {
@@ -34,9 +34,10 @@ pipeline {
             steps{
                 script {
                     echo 'pushing the image to docker hub' 
-                    docker.withRegistry('',registryCredential){
-                        dockerImage.push("${env.BUILD_ID}")
-                    }
+      withDockerRegistry([ credentialsId: 'registryCredential' , url: "https://hub.docker.com/repository/docker/vikashk872/external" ]) {
+      // following commands will be executed within logged docker registry
+      sh 'docker push ${env.imageName}:${env.BUILD_ID}'
+   }
                 }
             }
         }     
