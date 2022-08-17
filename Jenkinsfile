@@ -15,6 +15,7 @@ pipeline {
                 echo 'showing files from repo?' 
                 sh 'ls -a'
                 echo 'install dependencies' 
+                sh 'apt install nodejs'
                 sh 'npm install'
                 echo 'Run tests'
                // sh 'npm test'
